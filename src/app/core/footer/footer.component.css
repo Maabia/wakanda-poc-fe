@@ -1,0 +1,63 @@
+footer {
+  height: max-content;
+  background: #001226;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  padding: 1.5em 0px;
+}
+
+.rodape {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.copyright {
+  font-size: 10pt;
+  color: #dcdcdc;
+  text-align: right;
+  margin: 0;
+  margin-right: 3em;
+  letter-spacing: 1px;
+  font-style: italic;
+}
+
+.logo-wakanda {
+  margin: 0;
+  margin-left: 3em;
+  width: 10rem;
+}
+
+@media(max-width: 540px){
+  footer {
+    height: max-content;
+    background: #001226;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    padding: 1.5em 0px;
+  }
+
+  .rodape {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .copyright {
+    font-size: 7pt;
+    color: #dcdcdc;
+    text-align: right;
+    margin: 0;
+    margin-right: 3em;
+    letter-spacing: 1px;
+    font-style: italic;
+  }
+
+  .logo-wakanda {
+    margin: 0;
+    margin-left: 1.5em;
+    width: 8rem;
+  }
+}
