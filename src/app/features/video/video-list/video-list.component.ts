@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Video } from '../interfaces/video';
-import { VideoService } from '../service/video.service';
+import { Videos } from '../interfaces/videos';
+import { VideosService } from '../service/videos.service';
 
 @Component({
   selector: 'app-video-list',
@@ -10,21 +10,21 @@ import { VideoService } from '../service/video.service';
 })
 export class VideoListComponent implements OnInit {
 
-  videos: Array<Video> = [];
+  videos: Array<Videos> = [];
   videoIndex: number = 0;
   buttonMessage: string = "PRÓXIMO";
   titulo: string = '';
 
-  videos$!: Observable<Video[]>;
+  videos$!: Observable<Videos[]>;
 
-  constructor(private videoService: VideoService) { }
+  constructor(private videosService: VideosService) { }
 
   ngOnInit(): void {
    // this.videoService.getVideos().subscribe(dados => this.videoService = dados);
-    this.videos$ = this.videoService.getVideos();
+    this.videos$ = this.videosService.getVideos();
   }
 
-  getVideoSelecionado(): Video {
+  getVideoSelecionado(): Videos {
     return this.videos[this.videoIndex];
   }
 
