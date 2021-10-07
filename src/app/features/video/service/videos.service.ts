@@ -18,7 +18,7 @@ export class VideosService {
   getVideos() {
     return this.http.get<Videos[]>(this.API)
       .pipe(
-        tap(console.log)
+        tap()
       );
   }
 }
