@@ -1,0 +1,39 @@
+/*
+body{
+  height: 100%;
+  width: auto;
+  background: linear-gradient(black,#00062f);
+}
+*/
+h1 {
+  font-size: 3.5rem;
+  font-family: DecoturaICG;
+  color: white;
+  margin-bottom: 0pt;
+  padding-bottom: 0pt;
+}
+
+.next, .back {
+  background-color: #363636;
+  color: white;
+  z-index: 5;
+  position: relative;
+}
+
+.next {
+  padding-right: 0;
+}
+
+.back {
+  padding-left: 0;
+}
+
+.next::after {
+  content: '';
+  background-image: url("../../../assets/images/icons/arrow.svg");
+  margin-left: auto;
+  background-repeat: no-repeat;
+  height: 1.5rem;
+  width: 1.5rem;
+  transform: rotate(-90deg);
+}

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+
 import { Video } from '../interfaces/video';
 import { environment } from 'src/environments/environment';
 

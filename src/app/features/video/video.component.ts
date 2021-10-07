@@ -9,14 +9,14 @@ import { Video } from './interfaces/video';
 })
 export class VideoComponent implements OnInit {
 
-  @Input() video: Video = { id: 0 , titulo: '', url: "" } // verificar depois
+  @Input() video: Video = { id: 0 , titulo: 'Curso de Java 01', url: "LnORjqZUMIQ" } // verificar depois
 
   constructor(private sanitazer: DomSanitizer ) { }
 
   ngOnInit(): void {
   }
 
-  getSanitazedVideoURL() {
+  getSanitazedVideoURl() {
     const url = `https://www.youtube.com/embed/${this.video.url}`
     return this.sanitazer.bypassSecurityTrustResourceUrl(url);
   }
