@@ -1,3 +1,4 @@
+/*
 const userHost = 'http://localhost:8080';
 import { common } from "../environments/common.js";
 
@@ -7,3 +8,4 @@ export const environment = {
   userHost: userHost,
   ...common
 };
+*/

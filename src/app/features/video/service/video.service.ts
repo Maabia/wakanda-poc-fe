@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { Video } from '../interfaces/video';
-import { environment } from 'src/environments/environment';
+import { tap } from 'rxjs/operators';
+
 
 
 
@@ -11,10 +12,15 @@ import { environment } from 'src/environments/environment';
 })
 export class VideoService {
 
-  constructor(private httpClient: HttpClient) { }
+  private API = 'http://localhost:8080/video';
+
+  constructor(private http: HttpClient) { }
 
   // CORRIGIR
-  getVideos(id: string) {
-    return this.httpClient.get<Video[]>(environment.WakandaVideo.video.replace("{idVideo}", id));
+  getVideos() {
+    return this.http.get<Video[]>(this.API)
+      .pipe(
+        tap(console.log)
+      );
   }
 }

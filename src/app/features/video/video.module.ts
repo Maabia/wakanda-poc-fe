@@ -15,8 +15,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     CommonModule,
-    RouterModule,
-    HttpClientModule
+    RouterModule
+
   ]
 })
 export class VideoModule { }
