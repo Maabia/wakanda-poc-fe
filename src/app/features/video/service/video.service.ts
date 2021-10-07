@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Video } from '../interfaces/video';
+import { environment } from 'src/environments/environment';
 
 
 
@@ -10,11 +11,9 @@ import { Video } from '../interfaces/video';
 })
 export class VideoService {
 
-
-
   constructor(private httpClient: HttpClient) { }
 
-  getVideos(id: number) {
-    return this.http.get<Video[]>(this.API.path.replace("{idVideo}", id))
+  getVideos(id: string) {
+    return this.httpClient.get<Video[]>(environment.WakandaVideo.video.replace("{idVideo}", id));
   }
 }
