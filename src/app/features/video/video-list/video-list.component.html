@@ -1,10 +1,10 @@
 <body>
 
-  <div class="d-flex justify-content-center pt-3">
+  <div *ngIf="videos$ | async as videos" class="d-flex justify-content-center pt-3">
       <h1>{{getVideoSelecionado().titulo.toUpperCase()}}</h1>
   </div>
 
-  <div class="d-flex justify-content-center px-5 pb-5 pt-0">
+  <div *ngFor="let video of videos" class="d-flex justify-content-center px-5 pb-5 pt-0">
       <app-video [video]="getVideoSelecionado()"></app-video>
   </div>
 

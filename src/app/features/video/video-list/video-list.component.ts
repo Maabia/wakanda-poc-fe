@@ -15,10 +15,12 @@ export class VideoListComponent implements OnInit {
   buttonMessage: string = "PRÓXIMO";
   titulo: string = '';
 
+  videos$!: Observable<Videos[]>;
+
   constructor(private videosService: VideosService) { }
 
   ngOnInit(): void {
-    this.videosService.getVideos();
+    this.videos$ = this.videosService.getVideos();
   }
 
   getVideoSelecionado(): Videos {
