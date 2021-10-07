@@ -29,6 +29,11 @@ export class VideoListComponent implements OnInit {
       if ((this.videoIndex + 1) != (this.videos.length))
         this.videoIndex++;
     }
+
+    if (this.videoIndex === (this.videos.length - 1)) {
+      this.buttonMessage = "PRÓXIMO";
+    }
+
   }
 
   voltar() {

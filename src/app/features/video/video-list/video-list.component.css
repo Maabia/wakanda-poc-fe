@@ -30,7 +30,7 @@ h1 {
 
 .next::after {
   content: '';
-  background-image: url("../../../assets/images/icons/arrow.svg");
+  background-image: url("../../../../assets/icons/arrow.svg");
   margin-left: auto;
   background-repeat: no-repeat;
   height: 1.5rem;

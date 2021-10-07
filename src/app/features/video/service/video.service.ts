@@ -13,6 +13,7 @@ export class VideoService {
 
   constructor(private httpClient: HttpClient) { }
 
+  // CORRIGIR
   getVideos(id: string) {
     return this.httpClient.get<Video[]>(environment.WakandaVideo.video.replace("{idVideo}", id));
   }
