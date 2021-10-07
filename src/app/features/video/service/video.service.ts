@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 import { Video } from '../interfaces/video';
 import { tap } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 
 
 
@@ -12,7 +13,7 @@ import { tap } from 'rxjs/operators';
 })
 export class VideoService {
 
-  private API = 'http://localhost:8080/video';
+  private API = `${environment.API}video`;
 
   constructor(private http: HttpClient) { }
 
