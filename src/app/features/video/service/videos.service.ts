@@ -15,6 +15,7 @@ export class VideosService {
 
   constructor(private http: HttpClient) { }
 
+  // TERMINAR E FAZER TRATAMENTO DE ERRO
   getVideos() {
     return this.http.get<Videos[]>(this.API)
       .pipe(
