@@ -20,7 +20,7 @@ export class VideoListComponent implements OnInit {
   constructor(private videosService: VideosService) { }
 
   ngOnInit(): void {
-    this.videos$ = this.videosService.getVideos();
+    this.videosService.getVideos();
   }
 
   getVideoSelecionado(): Videos {

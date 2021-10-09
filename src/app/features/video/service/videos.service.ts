@@ -4,6 +4,8 @@ import { HttpClient } from '@angular/common/http';
 import { Videos } from '../interfaces/videos';
 
 import { environment } from 'src/environments/environment';
+import { DomSanitizer } from '@angular/platform-browser';
+import { Observable } from 'rxjs';
 
 
 @Injectable({
@@ -11,13 +13,15 @@ import { environment } from 'src/environments/environment';
 })
 export class VideosService {
 
-  private API = `${environment.API}video`;
+  apiUrl = 'localhost:8080/v1/video';
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private httpClient: HttpClient,
+    private sanitazer: DomSanitizer
+    ) { }
 
-  // TERMINAR E FAZER TRATAMENTO DE ERRO
-  getVideos() {
-    return this.http.get<Videos[]>(this.API)
 
+  getVideos(): Observable<Videos> {
+    return this.httpClient.get<Videos>(this.apiUrl);
   }
 }
