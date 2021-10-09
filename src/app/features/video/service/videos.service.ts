@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { Videos } from '../interfaces/videos';
-import { tap } from 'rxjs/operators';
+
 import { environment } from 'src/environments/environment';
 
 
@@ -18,8 +18,6 @@ export class VideosService {
   // TERMINAR E FAZER TRATAMENTO DE ERRO
   getVideos() {
     return this.http.get<Videos[]>(this.API)
-      .pipe(
-        tap()
-      );
+
   }
 }
