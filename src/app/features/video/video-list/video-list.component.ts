@@ -21,7 +21,8 @@ export class VideoListComponent implements OnInit {
   constructor(private videosService: VideosService) { }
 
   ngOnInit(): void {
-    this.videosService.getVideosById(this.id);
+    this.videosService.getVideoById(this.id);
+    console.log(this.videos)
   }
 
   getVideoSelecionado(): Videos {

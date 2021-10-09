@@ -17,11 +17,10 @@ export class VideosService {
 
   constructor(
     private httpClient: HttpClient,
-    private sanitazer: DomSanitizer
-    ) { }
+  ) { }
 
 
-  getVideosById(id: number): Observable<Videos> {
+  getVideoById(id: number): Observable<Videos> {
     return this.httpClient.get<Videos>(this.apiUrl);
   }
 }
