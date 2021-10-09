@@ -14,13 +14,14 @@ export class VideoListComponent implements OnInit {
   videoIndex: number = 0;
   buttonMessage: string = "PRÓXIMO";
   titulo: string = '';
+  id: number = 0;
 
   videos$!: Observable<Videos[]>;
 
   constructor(private videosService: VideosService) { }
 
   ngOnInit(): void {
-    this.videosService.getVideos();
+    this.videosService.getVideosById(this.id);
   }
 
   getVideoSelecionado(): Videos {

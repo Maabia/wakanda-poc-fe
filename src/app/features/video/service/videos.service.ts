@@ -21,7 +21,7 @@ export class VideosService {
     ) { }
 
 
-  getVideos(): Observable<Videos> {
+  getVideosById(id: number): Observable<Videos> {
     return this.httpClient.get<Videos>(this.apiUrl);
   }
 }
