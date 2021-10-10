@@ -14,9 +14,7 @@ export class VideoListComponent implements OnInit {
   videoIndex: number = 0;
   buttonMessage: string = "PRÓXIMO";
   titulo: string = '';
-  id: number = 0;
-
-  videos$!: Observable<Videos[]>;
+  id!: number;
 
   constructor(private videosService: VideosService) { }
 
@@ -34,11 +32,11 @@ export class VideoListComponent implements OnInit {
       if ((this.videoIndex + 1) != (this.videos.length))
         this.videoIndex++;
     }
-
+    /*
     if (this.videoIndex === (this.videos.length - 1)) {
       this.buttonMessage = "PRÓXIMO";
     }
-
+    */
   }
 
   voltar() {

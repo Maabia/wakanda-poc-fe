@@ -2,9 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { Videos } from '../interfaces/videos';
-
-import { environment } from 'src/environments/environment';
-import { DomSanitizer } from '@angular/platform-browser';
 import { Observable } from 'rxjs';
 
 
@@ -21,6 +18,6 @@ export class VideosService {
 
 
   getVideoById(id: number): Observable<Videos> {
-    return this.httpClient.get<Videos>(this.apiUrl);
+    return this.httpClient.get<Videos>(this.apiUrl + id);
   }
 }
