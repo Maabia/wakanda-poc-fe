@@ -73,10 +73,16 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "video-wakanda:build:production"
+              "browserTarget": "video-wakanda:build:production",
+              "proxyConfig": "./proxy/proxy.conf.js"
             },
-            "development": {
-              "browserTarget": "video-wakanda:build:development"
+            "dev": {
+              "browserTarget": "video-wakanda:build:dev",
+              "proxyConfig": "./proxy/dev-proxy.conf.js"
+            },
+            "local":{
+              "browserTarget": "video-wakanda:build:local",
+              "proxyConfig": "./proxy/local-proxy.conf.js"
             }
           },
           "defaultConfiguration": "development"

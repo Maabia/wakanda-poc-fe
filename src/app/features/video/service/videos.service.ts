@@ -11,6 +11,7 @@ import { Observable } from 'rxjs';
 export class VideosService {
 
   apiUrl = 'localhost:8080/v1/video';
+  //const headers = Headers;
 
   constructor(
     private httpClient: HttpClient,

@@ -9,6 +9,7 @@ import { CoreModule } from './core/core.module';
 import { CommonModule } from '@angular/common';
 import { VideoModule } from './features/video/video.module';
 import { HttpClientModule } from '@angular/common/http';
+import { VideosService } from './features/video/service/videos.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
     VideoModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [VideosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

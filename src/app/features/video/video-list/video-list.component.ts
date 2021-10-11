@@ -24,7 +24,9 @@ export class VideoListComponent implements OnInit {
     console.log(this.videos)
   }
 
+
   getVideoSelecionado(): Videos {
+    this.videosService.getVideoById(this.id).subscribe(videos => videos = videos);
     return this.videos[this.videoIndex];
   }
 
