@@ -19,14 +19,14 @@ export class VideoListComponent implements OnInit {
   constructor(private videosService: VideosService) { }
 
   ngOnInit(): void {
-   // this.videosService.getVideoById(this.id);
+    this.videosService.getVideoById();
     this.getVideoSelecionado();
     console.log(this.videos)
   }
 
 
   getVideoSelecionado(): Videos {
-    this.videosService.getVideoById(this.id).subscribe(videos => videos = videos);
+    this.videosService.getVideoById();
     return this.videos[this.videoIndex];
   }
 
@@ -35,11 +35,11 @@ export class VideoListComponent implements OnInit {
       if ((this.videoIndex + 1) != (this.videos.length))
         this.videoIndex++;
     }
-    /*
+
     if (this.videoIndex === (this.videos.length - 1)) {
       this.buttonMessage = "PRÓXIMO";
     }
-    */
+
   }
 
   voltar() {

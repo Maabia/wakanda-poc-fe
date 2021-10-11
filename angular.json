@@ -76,9 +76,9 @@
               "browserTarget": "video-wakanda:build:production",
               "proxyConfig": "./proxy/proxy.conf.js"
             },
-            "dev": {
-              "browserTarget": "video-wakanda:build:dev",
-              "proxyConfig": "./proxy/dev-proxy.conf.js"
+            "development": {
+              "browserTarget": "video-wakanda:build:development"
+
             },
             "local":{
               "browserTarget": "video-wakanda:build:local",

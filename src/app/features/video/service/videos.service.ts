@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 import { Videos } from '../interfaces/videos';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 
 @Injectable({
@@ -10,7 +11,7 @@ import { Observable } from 'rxjs';
 })
 export class VideosService {
 
-  apiUrl = 'localhost:8080/v1/video';
+  apiUrl = `${environment.apiUrl}video`;
   //const headers = Headers;
 
   constructor(
@@ -18,7 +19,7 @@ export class VideosService {
   ) { }
 
 
-  getVideoById(id: number): Observable<Videos> {
-    return this.httpClient.get<Videos>(this.apiUrl + id);
+  getVideoById(): Observable<Videos> {
+    return this.httpClient.get<Videos>(this.apiUrl);
   }
 }
