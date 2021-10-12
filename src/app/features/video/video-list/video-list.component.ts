@@ -12,7 +12,7 @@ export class VideoListComponent implements OnInit {
 
   videoId: Video;
   videoIndex: number = 0;
-  videos: Array<Video> = [];
+  videos: Video[];
   buttonMessage: string = "PRÓXIMO";
   titulo: string = '';
   id: number = 1;
