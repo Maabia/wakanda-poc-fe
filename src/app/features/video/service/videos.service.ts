@@ -5,21 +5,18 @@ import { Videos } from '../interfaces/videos';
 import { Observable } from 'rxjs';
 
 
-
 @Injectable({
   providedIn: 'root'
 })
 export class VideosService {
 
-  //apiUrl = `${environment.apiUrl}video`;
-  API = 'http://localhost:8080/v1/video/{idVideo}';
 
   constructor(
-    private httpClient: HttpClient,
+    private http: HttpClient,
   ) { }
 
-  getVideos(id: number): Observable<Videos[]> {
-    return this.httpClient.get<Videos[]>(this.API + id);
+  getIdVideos(id: number): Observable<Videos>{
+    return this.http.get<Videos>(`https://localhost:8080/v1/video/${id}`);
   }
 
 }
