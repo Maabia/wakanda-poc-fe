@@ -15,7 +15,7 @@ export class VideoListComponent implements OnInit {
   videos: Video[];
   buttonMessage: string = "PRÓXIMO";
   titulo: string = '';
-  id: number = 1;
+  id: number;
 
   constructor(private videosService: VideosService) { }
 
@@ -30,7 +30,7 @@ export class VideoListComponent implements OnInit {
   }
 
   getVideoSelecionado(): Video {
-    return this.videos[this.videoIndex];
+    return this.videoId[this.videoIndex];
   }
 
   proximo() {

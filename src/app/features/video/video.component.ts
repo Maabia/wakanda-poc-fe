@@ -9,9 +9,8 @@ import { Video } from './interfaces/video';
 })
 export class VideoComponent implements OnInit {
 
-  // PARA TESTE
-  @Input() video: Video = { id: 0, titulo: 'Curso de Java 01', url: 'LnORjqZUMIQ' }
 
+  @Input() video: Video = { id: 1, titulo: '', url: '' }
   titulo: string = '';
 
   constructor(private sanitazer: DomSanitizer ) { }
