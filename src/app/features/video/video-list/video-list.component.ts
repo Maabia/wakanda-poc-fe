@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Videos } from '../interfaces/videos';
+import { Video } from '../interfaces/video';
 import { VideosService } from '../service/videos.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { VideosService } from '../service/videos.service';
 })
 export class VideoListComponent implements OnInit {
 
-  videos: Array<Videos> = [];
+  videos: Array<Video> = [];
   videoIndex: number = 0;
   buttonMessage: string = "PRÓXIMO";
   titulo: string = '';
@@ -23,9 +23,9 @@ export class VideoListComponent implements OnInit {
   }
 
 
-  getVideoSelecionado(): Videos {
-    this.videosService.getVideos(this.id).subscribe(videos => {
-      this.videos = videos;
+  getVideoSelecionado(): Video {
+    this.videosService.getVideos(this.id).subscribe(video => {
+      this.videos = video;
       console.log(this.videos)
     })
 

@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { Videos } from './interfaces/videos';
+import { Video } from './interfaces/video';
 
 @Component({
   selector: 'app-video',
@@ -10,7 +10,7 @@ import { Videos } from './interfaces/videos';
 export class VideoComponent implements OnInit {
 
   // PARA TESTE
-  @Input() video: Videos = { id: 0, titulo: 'Curso de Java 01', url: 'LnORjqZUMIQ' }
+  @Input() video: Video = { id: 0, titulo: 'Curso de Java 01', url: 'LnORjqZUMIQ' }
 
   titulo: string = '';
 

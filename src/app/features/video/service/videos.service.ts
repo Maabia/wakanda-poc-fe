@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { Videos } from '../interfaces/videos';
+import { Video } from '../interfaces/video';
 import { Observable } from 'rxjs';
 
 
@@ -15,8 +15,8 @@ export class VideosService {
     private http: HttpClient,
   ) { }
 
-  getIdVideos(id: number): Observable<Videos>{
-    return this.http.get<Videos>(`https://localhost:8080/v1/video/${id}`);
+  getIdVideos(id: number): Observable<Video>{
+    return this.http.get<Video>(`https://localhost:8080/v1/video/${id}`);
   }
 
 }
