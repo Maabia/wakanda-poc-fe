@@ -11,15 +11,15 @@ import { environment } from 'src/environments/environment';
 })
 export class VideosService {
 
-  apiUrl = `${environment.apiUrl}video`;
-  //const headers = Headers;
+  //apiUrl = `${environment.apiUrl}video`;
+  API = 'http://localhost:8080/v1/video/{idVideo}';
 
   constructor(
     private httpClient: HttpClient,
   ) { }
 
-
-  getVideoById(): Observable<Videos> {
-    return this.httpClient.get<Videos>(this.apiUrl);
+  getVideos(id: number): Observable<Videos[]> {
+    return this.httpClient.get<Videos[]>(this.API + id);
   }
+
 }
