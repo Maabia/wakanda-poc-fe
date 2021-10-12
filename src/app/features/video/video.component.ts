@@ -19,7 +19,6 @@ export class VideoComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
   getSanitazedVideoURl() {
     const url = `https://www.youtube.com/embed/${this.video.url}`
     return this.sanitazer.bypassSecurityTrustResourceUrl(url);

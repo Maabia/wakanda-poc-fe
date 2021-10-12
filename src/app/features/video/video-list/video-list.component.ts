@@ -10,25 +10,26 @@ import { VideosService } from '../service/videos.service';
 })
 export class VideoListComponent implements OnInit {
 
-  videos: Array<Video> = [];
+  videoId: Video;
   videoIndex: number = 0;
+  videos: Array<Video> = [];
   buttonMessage: string = "PRÓXIMO";
   titulo: string = '';
-  id!: number;
+  id: number = 1;
 
   constructor(private videosService: VideosService) { }
 
   ngOnInit(): void {
-
+    this.getVideosById();
   }
 
+  getVideosById() {
+    this.videosService.getIdVideos(this.id).subscribe((resp: Video) => {
+      this.videoId = resp
+    })
+  }
 
   getVideoSelecionado(): Video {
-    this.videosService.getVideos(this.id).subscribe(video => {
-      this.videos = video;
-      console.log(this.videos)
-    })
-
     return this.videos[this.videoIndex];
   }
 
