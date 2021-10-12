@@ -1,7 +1,7 @@
 const enviroment = require("./src/environments/environment");
 
 module.exports = {
-  "/video-wakanda/app/v1/video/*": {
+  "/app/v1/*": {
       "target": environment.apiUrl,
       source: false,
       logLevel: "debug",
