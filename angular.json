@@ -52,8 +52,8 @@
               ],
               "fileReplacements": [
                 {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
+                  "replace": "src/environments/environment.js",
+                  "with": "src/environments/environment.prod.js"
                 }
               ],
               "outputHashing": "all"
@@ -74,7 +74,7 @@
           "configurations": {
             "production": {
               "browserTarget": "video-wakanda:build:production",
-              "proxyConfig": "./proxy/proxy.conf.js"
+              "proxyConfig": "./proxy.conf.js"
             },
             "development": {
               "browserTarget": "video-wakanda:build:development"
