@@ -1,0 +1,47 @@
+iframe {
+  aspect-ratio: 16/9;
+  border: 0px;
+  width: 38rem;
+  height: 55%;
+  overflow: auto;
+  margin-left: 22rem;
+}
+
+@media (max-width: 860px) {
+  iframe {
+    width: 30rem;
+    margin-left: 7.5rem;
+  }
+}
+
+@media (max-width: 720px) {
+  iframe {
+    width: 30rem;
+  }
+}
+
+@media (max-width: 630px) {
+  iframe {
+    width: 30rem;
+    margin-left: 4rem;
+  }
+}
+
+@media (max-width: 560px) {
+  iframe {
+    width: 25rem;
+  }
+}
+
+@media (max-width: 460px) {
+  iframe {
+    width: 18rem;
+    margin-right: 4rem;
+  }
+}
+
+@media (max-width: 370px) {
+  iframe {
+    width: 18rem;
+  }
+}

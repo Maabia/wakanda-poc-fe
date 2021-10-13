@@ -9,9 +9,8 @@ import { Video } from './interfaces/video';
 })
 export class VideoComponent implements OnInit {
 
-
-  @Input() video: Video = { id: 1, titulo: '', url: '' }
-  titulo: string = '';
+  // PARA TESTE
+  @Input() video: Video = { id: 1, titulo: 'Curso de Java 01: Introdução e Dicas para quem está Começando', url: 'LnORjqZUMIQ' }
 
   constructor(private sanitazer: DomSanitizer ) { }
 
@@ -21,6 +20,7 @@ export class VideoComponent implements OnInit {
   getSanitazedVideoURl() {
     const url = `https://www.youtube.com/embed/${this.video.url}`
     return this.sanitazer.bypassSecurityTrustResourceUrl(url);
+
   }
 
 }

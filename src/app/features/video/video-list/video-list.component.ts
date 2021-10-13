@@ -25,7 +25,7 @@ export class VideoListComponent implements OnInit {
 
   getVideosById() {
     this.videosService.getIdVideos(this.id).subscribe((resp: Video) => {
-      this.videoId = resp
+      this.videoId = resp;
     })
   }
 
