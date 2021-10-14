@@ -39,8 +39,11 @@ export class VideoListComponent implements OnInit {
   }
 
   proximo() {
-    this.id++
-    this.getVideosById();
+    if (this.id > 98) {
+      this.id++
+      this.getVideosById();
+      this.videosService.showMessage('Curso concluído com sucesso!');
+    }
   }
 
   voltar() {

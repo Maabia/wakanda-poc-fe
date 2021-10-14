@@ -10,6 +10,7 @@ import { CommonModule } from '@angular/common';
 import { VideoModule } from './features/video/video.module';
 import { HttpClientModule } from '@angular/common/http';
 import { VideosService } from './features/video/service/videos.service';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,9 @@ import { VideosService } from './features/video/service/videos.service';
     CoreModule,
     CommonModule,
     VideoModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSnackBarModule
+
   ],
   providers: [VideosService],
   bootstrap: [AppComponent]
