@@ -16,7 +16,7 @@ export class VideosService {
   ) { }
 
   getIdVideos(id: number): Observable<Video>{
-    return this.http.get<Video>(`https://localhost:8080/v1/video/${id}`);
+    return this.http.get<Video>(`http://localhost:8080/v1/video/${id}`);
   }
 
 }

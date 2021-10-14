@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { Observable } from 'rxjs';
 import { Video } from '../interfaces/video';
 import { VideosService } from '../service/videos.service';
@@ -13,11 +14,14 @@ export class VideoListComponent implements OnInit {
   videoId: Video;
   videoIndex: number = 0;
   videos: Video[];
-  buttonMessage: string = "PRÓXIMO";
   titulo: string = '';
-  id: number;
+  id: number = 1;
 
-  constructor(private videosService: VideosService) { }
+  constructor(
+    private videosService: VideosService,
+    private sanitazer: DomSanitizer
+
+    ) { }
 
   ngOnInit(): void {
     this.getVideosById();
@@ -29,26 +33,26 @@ export class VideoListComponent implements OnInit {
     })
   }
 
+  getSanitazedVideoURl() {
+    const url = `https://www.youtube.com/embed/${this.videoId.url}`
+    return this.sanitazer.bypassSecurityTrustResourceUrl(url);
+
+  }
+
   getVideoSelecionado(): Video {
     return this.videoId[this.videoIndex];
   }
 
   proximo() {
-    if (this.videoIndex < (this.videos.length)) {
-      if ((this.videoIndex + 1) != (this.videos.length))
-        this.videoIndex++;
-    }
-
-    if (this.videoIndex === (this.videos.length - 1)) {
-      this.buttonMessage = "PRÓXIMO";
-    }
-
+    this.id++
+    this.getVideosById();
   }
 
   voltar() {
-    if (this.videoIndex >= 0)
-      this.videoIndex--;
+    if (this.id > 1) {
+      this.id--
+      this.getVideosById();
+    }
+
   }
-
-
 }

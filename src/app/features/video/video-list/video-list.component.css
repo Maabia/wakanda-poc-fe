@@ -1,15 +1,10 @@
+iframe {
+  aspect-ratio: 16/9;
+  border: 0px;
+  width: 38rem;
+  height: 80%;
+  overflow: auto;
 
-body{
-  height: 100%;
-  width: auto;
-}
-
-h1 {
-  font-size: 3.5rem;
-  font-family: DecoturaICG;
-  color: white;
-  margin-bottom: 0pt;
-  padding-bottom: 0pt;
 }
 
 .next, .back {
@@ -33,3 +28,4 @@ h1 {
   width: 1.5rem;
   transform: rotate(-90deg);
 }
+

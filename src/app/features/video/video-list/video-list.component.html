@@ -1,20 +1,18 @@
 <body>
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-10 d-flex justify-content-center">
+      <iframe [src]="getSanitazedVideoURl()" [title]="videoId.titulo"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
 
-  <div class="d-flex justify-content-center pt-3">
-    <h1>{{getVideoSelecionado().titulo.toUpperCase()}}</h1>
-  </div>
-
-  <div class="d-flex justify-content-center px-5 pb-5 pt-0">
-    <app-video [video]="getVideoSelecionado()"></app-video>
+    </div>
   </div>
 
   <div class="d-flex justify-content-between px-5 pb-5 pt-0">
 
     <button class="d-flex btn back" (click)="voltar()">VOLTAR</button>
 
-    <button class="d-flex btn next" (click)="proximo()">
-      {{buttonMessage}}
-    </button>
+    <button class="d-flex btn next" (click)="proximo()">PRÓXIMO</button>
   </div>
 </body>
-
