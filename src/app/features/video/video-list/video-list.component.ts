@@ -34,8 +34,8 @@ export class VideoListComponent implements OnInit {
   }
 
   getSanitazedVideoURl(): SafeResourceUrl {
-    const url = `https://www.youtube.com/embed/${this.videoId.url}`
-    return this.sanitazer.bypassSecurityTrustResourceUrl(url);
+    const urlSafe = `https://www.youtube.com/embed/${this.videoId.url}`
+    return this.sanitazer.bypassSecurityTrustResourceUrl(urlSafe);
   }
 
   proximo() {

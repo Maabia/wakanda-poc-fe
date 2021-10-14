@@ -19,13 +19,10 @@ iframe {
   z-index: 5;
   position: relative;
   bottom: 1rem;
-  outline: none;
-  border: 0;
 }
 
 button.botao-next {
   margin-right: 6rem;
-  outline: none;
 }
 
 button.botao-back {
