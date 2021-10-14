@@ -48,6 +48,5 @@ export class VideoListComponent implements OnInit {
       this.id--
       this.getVideosById();
     }
-
   }
 }
