@@ -1,10 +1,16 @@
+body {
+  height: 100%;
+  width: auto;
+  background: linear-gradient(black,#00062f);
+}
+
 iframe {
   aspect-ratio: 16/9;
   border: 0px;
   width: 38rem;
-  height: 80%;
+  height: 100%;
   overflow: auto;
-
+  margin-top: 2rem;
 }
 
 .next, .back {
@@ -12,6 +18,18 @@ iframe {
   color: white;
   z-index: 5;
   position: relative;
+  bottom: 1rem;
+  outline: none;
+  border: 0;
+}
+
+button.botao-next {
+  margin-right: 6rem;
+  outline: none;
+}
+
+button.botao-back {
+  margin-left: 6rem;
 }
 
 .next {
@@ -24,8 +42,147 @@ iframe {
   background-image: url("../../../../assets/icons/arrow.svg");
   margin-left: auto;
   background-repeat: no-repeat;
-  height: 1.5rem;
-  width: 1.5rem;
+  height: 1.2rem;
+  width: 1.2rem;
   transform: rotate(-90deg);
 }
 
+.back::before {
+  content: '';
+  background-image: url("../../../../assets/icons/arrow.svg");
+  margin-left: auto;
+  background-repeat: no-repeat;
+  height: 1.2rem;
+  width: 1.2rem;
+  transform: rotate(-270deg);
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 982px) {
+  iframe {
+    width: 30rem;
+  }
+
+  button.botao-next {
+    margin-right: 4rem;
+  }
+
+  button.botao-back {
+    margin-left: 4rem;
+  }
+
+}
+
+@media (max-width: 930px) {
+  iframe {
+    width: 30rem;
+  }
+
+  button.botao-next {
+    margin-right: 2rem;
+  }
+
+  button.botao-back {
+    margin-left: 2rem;
+  }
+
+}
+
+@media (max-width: 866px) {
+  iframe {
+    width: 30rem;
+  }
+
+  button.botao-next {
+    margin-right: 1rem;
+  }
+
+  button.botao-back {
+    margin-left: 1rem;
+  }
+}
+
+@media (max-width: 828px) {
+  iframe {
+    width: 28rem;
+  }
+
+  button.botao-next {
+    margin-right: 1rem;
+  }
+
+  button.botao-back {
+    margin-left: 1rem;
+  }
+}
+
+@media (max-width: 804px) {
+  iframe {
+    width: 28rem;
+  }
+
+  button.botao-next {
+    margin-right: 1rem;
+  }
+
+  button.botao-back {
+    margin-left: 1rem;
+  }
+}
+
+@media (max-width: 630px) {
+  iframe {
+    width: 30rem;
+  }
+
+  button.botao-next {
+    margin-right: 2rem;
+  }
+
+  button.botao-back {
+    margin-left: 2rem;
+  }
+}
+
+@media (max-width: 560px) {
+  iframe {
+    width: 25rem;
+  }
+
+  button.botao-next {
+    margin-right: 2rem;
+  }
+
+  button.botao-back {
+    margin-left: 2rem;
+  }
+}
+
+@media (max-width: 460px) {
+  iframe {
+    width: 22rem;
+  }
+
+  button.botao-next {
+    margin-right: 2rem;
+  }
+
+  button.botao-back {
+    margin-left: 2rem;
+  }
+}
+
+@media (max-width: 370px) {
+  iframe {
+    width: 18rem;
+  }
+
+  button.botao-next {
+    margin-right: 1rem;
+  }
+
+  button.botao-back {
+    margin-left: 1rem;
+  }
+}

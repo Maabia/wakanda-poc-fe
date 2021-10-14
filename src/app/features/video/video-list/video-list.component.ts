@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { Observable } from 'rxjs';
+
 import { Video } from '../interfaces/video';
 import { VideosService } from '../service/videos.service';
 
@@ -36,11 +36,6 @@ export class VideoListComponent implements OnInit {
   getSanitazedVideoURl() {
     const url = `https://www.youtube.com/embed/${this.videoId.url}`
     return this.sanitazer.bypassSecurityTrustResourceUrl(url);
-
-  }
-
-  getVideoSelecionado(): Video {
-    return this.videoId[this.videoIndex];
   }
 
   proximo() {
