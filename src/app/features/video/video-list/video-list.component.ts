@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 import { Video } from '../interfaces/video';
 import { VideosService } from '../service/videos.service';
@@ -12,10 +12,10 @@ import { VideosService } from '../service/videos.service';
 export class VideoListComponent implements OnInit {
 
   videoId: Video;
-  videoIndex: number = 0;
   videos: Video[];
   titulo: string = '';
   id: number = 1;
+  url: string;
 
   constructor(
     private videosService: VideosService,
@@ -33,7 +33,7 @@ export class VideoListComponent implements OnInit {
     })
   }
 
-  getSanitazedVideoURl() {
+  getSanitazedVideoURl(): SafeResourceUrl {
     const url = `https://www.youtube.com/embed/${this.videoId.url}`
     return this.sanitazer.bypassSecurityTrustResourceUrl(url);
   }
@@ -44,9 +44,8 @@ export class VideoListComponent implements OnInit {
       this.getVideosById();
     } else {
       this.videosService.showMessage('Curso concluído com sucesso!');
-
+      // TODO: POSSO ADICIONAR ROTA PARA OUTRA TELA AQUI
     }
-
   }
 
   voltar() {
