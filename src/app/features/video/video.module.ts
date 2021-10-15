@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 import { VideoListComponent } from './video-list/video-list.component';
+import { BrowserModule } from '@angular/platform-browser';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { VideoListComponent } from './video-list/video-list.component';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    BrowserModule
   ]
 })
 export class VideoModule { }

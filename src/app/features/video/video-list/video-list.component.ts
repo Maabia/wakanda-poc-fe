@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { DomSanitizer, SafeResourceUrl, SafeUrl } from '@angular/platform-browser';
 
 import { Video } from '../interfaces/video';
 import { VideosService } from '../service/videos.service';
@@ -34,8 +34,8 @@ export class VideoListComponent implements OnInit {
   }
 
   getSanitazedVideoURl(): SafeResourceUrl {
-    const urlSafe = `https://www.youtube.com/embed/${this.videoId.url}`
-    return this.sanitazer.bypassSecurityTrustResourceUrl(urlSafe);
+    const url = `https://www.youtube.com/embed/${this.videoId.url}`
+    return this.sanitazer.bypassSecurityTrustResourceUrl(url);
   }
 
   proximo() {
