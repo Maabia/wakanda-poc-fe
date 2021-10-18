@@ -15,7 +15,7 @@ export class VideoListComponent implements OnInit {
   videos: Video[];
   titulo: string = '';
   id: number = 1;
-  url: string;
+  url: string = 'https://www.youtube.com/embed/';
 
   constructor(
     private videosService: VideosService,
@@ -34,8 +34,27 @@ export class VideoListComponent implements OnInit {
   }
 
   getSanitazedVideoURl(): SafeResourceUrl {
-    const url = `https://www.youtube.com/embed/${this.videoId.url}`
-    return this.sanitazer.bypassSecurityTrustResourceUrl(url);
+    //const url = `https://www.youtube.com/embed/${this.videoId.url}`;
+   // const url = `https://www.youtube.com/embed/CQ0yLJxFF_Q`;
+   // console.log('logando url: ' + url);
+
+    return this.sanitazer.bypassSecurityTrustResourceUrl(this.url + this.getVideoIdYouTube() );
+  }
+
+  getVideoIdYouTube(): String {
+    if (this.videoId) {
+      return this.videoId.url;
+    } else {
+      return '';
+    }
+  }
+
+  getVideoTitulo(): String {
+    if (this.videoId) {
+      return this.videoId.titulo;
+    } else {
+      return '';
+    }
   }
 
   proximo() {
