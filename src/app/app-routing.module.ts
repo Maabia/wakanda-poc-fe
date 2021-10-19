@@ -4,15 +4,9 @@ import { VideoListComponent } from './features/video/video-list/video-list.compo
 
 const routes: Routes = [
   {
-    path: '',
-    pathMatch: 'full',
-    redirectTo: 'video'
+    path: 'video',
+    loadChildren: () => import('./features/video/video.module').then(m => m.VideoModule)
   },
-  {
-    path: "video",
-    component: VideoListComponent
-  },
-
 ];
 
 
