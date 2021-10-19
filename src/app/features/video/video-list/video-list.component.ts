@@ -34,11 +34,7 @@ export class VideoListComponent implements OnInit {
   }
 
   getSanitazedVideoURl(): SafeResourceUrl {
-    //const url = `https://www.youtube.com/embed/${this.videoId.url}`;
-   // const url = `https://www.youtube.com/embed/CQ0yLJxFF_Q`;
-   // console.log('logando url: ' + url);
-
-    return this.sanitazer.bypassSecurityTrustResourceUrl(this.url + this.getVideoIdYouTube() );
+    return this.sanitazer.bypassSecurityTrustResourceUrl(this.url + this.getVideoIdYouTube());
   }
 
   getVideoIdYouTube(): String {
