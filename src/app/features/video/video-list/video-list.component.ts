@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl, SafeUrl } from '@angular/platform-browser';
+import { ActivatedRoute, Params } from '@angular/router';
+
 
 import { Video } from '../interfaces/video';
 import { VideosService } from '../service/videos.service';
@@ -17,14 +19,22 @@ export class VideoListComponent implements OnInit {
   id: number = 1;
   url: string = 'https://www.youtube.com/embed/';
 
+
   constructor(
     private videosService: VideosService,
-    private sanitazer: DomSanitizer
-
-    ) { }
+    private sanitazer: DomSanitizer,
+    private route: ActivatedRoute) {
+      //this.id = this.route.snapshot.params['id'];
+    }
 
   ngOnInit(): void {
     this.getVideosById();
+    // this.inscricao = this.route.params.subscribe(
+     // (params: Params) => {
+     //   this.id = params['id'];
+     // }
+   // );
+
   }
 
   getVideosById() {
