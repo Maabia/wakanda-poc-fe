@@ -1,20 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
 
-import { VideoListComponent } from './video-list/video-list.component';
-import { BrowserModule } from '@angular/platform-browser';
+import { VideoRoutingModule } from './video-routing.module';
 
 
 @NgModule({
-  declarations: [
-    VideoListComponent
-
-  ],
+  declarations: [],
   imports: [
     CommonModule,
-    RouterModule,
-    BrowserModule
+    VideoRoutingModule
   ]
 })
 export class VideoModule { }
