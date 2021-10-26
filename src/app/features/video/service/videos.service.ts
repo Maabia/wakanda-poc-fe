@@ -11,6 +11,7 @@ import { Observable } from 'rxjs';
 })
 export class VideosService {
 
+
   constructor(
     private http: HttpClient,
     private snackBar: MatSnackBar
@@ -19,6 +20,7 @@ export class VideosService {
   getIdVideos(id: number): Observable<Video>{
     return this.http.get<Video>(`http://localhost:8080/v1/video/${id}`);
   }
+
 
   showMessage(msg: string): void {
     this.snackBar.open(msg, 'X', {

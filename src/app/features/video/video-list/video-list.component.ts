@@ -23,18 +23,11 @@ export class VideoListComponent implements OnInit {
   constructor(
     private videosService: VideosService,
     private sanitazer: DomSanitizer,
-    private route: ActivatedRoute) {
-      //this.id = this.route.snapshot.params['id'];
-    }
+    private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    // this.id = this.activatedRoute.snapshot.params.id;
     this.getVideosById();
-    // this.inscricao = this.route.params.subscribe(
-     // (params: Params) => {
-     //   this.id = params['id'];
-     // }
-   // );
-
   }
 
   getVideosById() {
@@ -62,6 +55,7 @@ export class VideoListComponent implements OnInit {
       return '';
     }
   }
+
 
   proximo() {
     if (this.id < 98) {
